@@ -45,8 +45,17 @@ app.post('/batalha', (req, res) => {
     res.send(dataBase.batalhaPokemon(req.body.id1, req.body.id2))
 })
 
-app.post('/curar', (req, res) => {
-    res.send(dataBase.curarPokemon(req.body.hp1, req.body.hp2))
+app.put('/pokemons/:hp', (req, res) => {
+    const pokemonCurado = dataBase.atualizarPokemon(req.params.hp, {
+        nome: req.body.nome,
+        tipo: req.body.tipo,
+        fraqueza: req.body.fraqueza,
+        resistencia: req.body.resistencia,
+        hp: parseInt(req.params.hp)
+    })
+
+    res.send(pokemonCurado)
 })
+
 
 app.listen(3003)

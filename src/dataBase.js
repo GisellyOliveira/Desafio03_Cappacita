@@ -85,4 +85,5 @@ function curarPokemon(hp) {
     return pokemonCurado
 }
 
-module.exports = { salvarpokemons, mostrarPokemon, mostrarPokemons, atualizarPokemon, deletarPokemon, batalhaPokemon }
+module.exports = { salvarpokemons, mostrarPokemon, mostrarPokemons, atualizarPokemon, deletarPokemon, batalhaPokemon, curarPokemon }
+
